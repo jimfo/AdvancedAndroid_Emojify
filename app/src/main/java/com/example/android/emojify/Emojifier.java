@@ -41,6 +41,7 @@ class Emojifier {
         // Create the face detector, disable tracking and enable classifications
         FaceDetector detector = new FaceDetector.Builder(context)
                 .setTrackingEnabled(false)
+                .setLandmarkType(FaceDetector.ALL_LANDMARKS)
                 .setClassificationType(FaceDetector.ALL_CLASSIFICATIONS)
                 .build();
 
@@ -59,9 +60,18 @@ class Emojifier {
         }
 
         // TODO (2): Iterate through the faces, calling getClassifications() for each face.
+        for(int idx = 0; idx < faces.size(); idx++){
+            getClassification(faces.get(idx));
+        }
 
         // Release the detector
         detector.release();
+    }
+
+    static void getClassification(Face face){
+        Log.d(LOG_TAG, "Left Eye Probability" + face.getIsLeftEyeOpenProbability());
+        Log.d(LOG_TAG, "Right Eye Probability" + face.getIsRightEyeOpenProbability());
+        Log.d(LOG_TAG, "Smiling Probability" + face.getIsSmilingProbability());
     }
 
     // TODO (1): Create a static method called getClassifications() which logs the probability of each eye being open and that the person is smiling.
