@@ -1,6 +1,5 @@
 package com.example.android.emojify;
 
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
@@ -42,5 +41,4 @@ public class Emojifier {
         }
         detector.release();
     }
-
 }

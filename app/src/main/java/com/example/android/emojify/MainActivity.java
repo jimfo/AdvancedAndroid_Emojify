@@ -45,25 +45,19 @@ import static com.example.android.emojify.Emojifier.detectFaces;
 
 public class MainActivity extends AppCompatActivity {
 
-    // TODO (1): Create a Java class called Emojifier
-        // TODO (2): Create a static method in the Emojifier class called detectFaces() which detects and logs the number of faces in a given bitmap.
-
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int REQUEST_STORAGE_PERMISSION = 1;
 
     private static final String FILE_PROVIDER_AUTHORITY = "com.example.android.fileprovider";
 
     private ImageView mImageView;
-
     private Button mEmojifyButton;
     private FloatingActionButton mShareFab;
     private FloatingActionButton mSaveFab;
     private FloatingActionButton mClearFab;
     private ExifInterface exif = null;
     private TextView mTitleTextView;
-
     private String mTempPhotoPath;
-
     private Bitmap mResultsBitmap;
 
 
@@ -246,9 +240,6 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
     }
-
-
-
 
     /**
      * OnClick method for the save button.
